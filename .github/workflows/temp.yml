@@ -1,0 +1,23 @@
+name: TEMP
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    # run every 10 a.m., which is UTC 2 a.m + 8
+    - cron:  '0 4 * * *'
+  workflow_dispatch: [ master ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: run
+        run: python3 temp.py
