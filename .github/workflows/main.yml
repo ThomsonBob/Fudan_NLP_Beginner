@@ -1,4 +1,4 @@
-name: Go
+name: NUS_TEMP
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
   schedule:
     # run every 10 a.m., which is UTC 2 a.m + 8
-    - cron:  '0 2 * * *'
+    - cron:  '0 4 * * *'
   workflow_dispatch: [ master ]
 
 jobs:
@@ -21,4 +21,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: run
-        run: STD_ID=${{ secrets.STD_ID }} PASSWORD=${{ secrets.PASSWORD }} python3 main.py
+        run: python3 temp.py
