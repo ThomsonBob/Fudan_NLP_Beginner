@@ -47,7 +47,7 @@ class NUSHTD:
             return True, f'Successfully declared temperate on {declare_data["tempDeclOn"]}({declare_data["declFrequency"]}M) with {declare_data["temperature"]} degree celsius'
         return False, f'Unable to declare temperate.'
 if __name__ == "__main__":
-    nus_htd = NUSHTD("nusstu\E0675913", "175078Tb!@#")
+    nus_htd = NUSHTD("nusstu\E0675913", "123456789")
     tmp=get_rand_temp()
     result, msg = nus_htd.declare(tmp)
     print(msg)
